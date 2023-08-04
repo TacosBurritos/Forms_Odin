@@ -1,9 +1,16 @@
+
 body{
     margin: 0;
     padding: 0;
     background-image: url(images/marina-YmQ0-nmWcV0-unsplash.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    --flxDir: column;
+    --alnItm: center;
+    --mrgnVal: 40%;
+    --pdnVal: 4%;
+    --logoWidth: 30%;
+    --logoMrgn: 20%;
 }
 .image-section{
     position: relative;
@@ -14,18 +21,32 @@ body{
 }
 
 @media screen and (min-width: 850px){
-
+    body{
+        display: flex;
+        position: relative;
+    }
+    .input-section{
+        --mrgnVal: 0%;
+        position: absolute;
+        width: 55%;
+        right: 0;
+    }
+    .logo{
+        width: 60%;
+        padding-top: 20%;
+    }
 }
-
-@media screen and (min-width: 1200px){
-
+.logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: var(--logoMrgn);
 }
-
-form{
-    --flxDir: column;
-    --alnItm: center;
-    --mrgnVal: 100%;
-    --pdnVal: 4%;
+.logo > img{
+    width: var(--logoWidth);
+    height: auto;
+}
+.input-section{ 
     display: flex;
     background-color: black;
     color: white;
@@ -33,6 +54,12 @@ form{
     align-items: var(--alnItm);
     margin-top: var(--mrgnVal);
     padding: var(--pdnVal);
+}
+.text{
+    font-weight: bold;
+}
+form > div > label{
+    flex-direction: column;
 }
 
 /* i can declare variables inside media and then use that value to initiate each of the sections */
