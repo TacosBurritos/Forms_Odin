@@ -1,0 +1,38 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url(images/marina-YmQ0-nmWcV0-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.image-section{
+    position: relative;
+}
+
+@media screen and (min-width: 500px){
+
+}
+
+@media screen and (min-width: 850px){
+
+}
+
+@media screen and (min-width: 1200px){
+
+}
+
+form{
+    --flxDir: column;
+    --alnItm: center;
+    --mrgnVal: 100%;
+    --pdnVal: 4%;
+    display: flex;
+    background-color: black;
+    color: white;
+    flex-direction: var(--flxDir);
+    align-items: var(--alnItm);
+    margin-top: var(--mrgnVal);
+    padding: var(--pdnVal);
+}
+
+/* i can declare variables inside media and then use that value to initiate each of the sections */
