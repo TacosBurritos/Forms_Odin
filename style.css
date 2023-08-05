@@ -5,15 +5,27 @@ body{
     background-image: url(images/marina-YmQ0-nmWcV0-unsplash.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     --flxDir: column;
     --alnItm: center;
     --mrgnVal: 40%;
-    --pdnVal: 4%;
+    --pdnVal: 2%;
     --logoWidth: 30%;
     --logoMrgn: 20%;
+    --btnPadding: 8px;
+    --fntSz: large;
+    --btnBgColor: rgb(79, 180, 243);
 }
 .image-section{
     position: relative;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
 }
 
 @media screen and (min-width: 500px){
@@ -25,6 +37,10 @@ body{
         display: flex;
         position: relative;
     }
+    .img-text{
+        position: absolute;
+        top: 180%;
+    }
     .input-section{
         --mrgnVal: 0%;
         position: absolute;
@@ -34,35 +50,49 @@ body{
     .logo{
         width: 60%;
         padding-top: 20%;
+        padding-left: 15%;
     }
     .text{
-        padding: 5%;
+        padding: 3%;
+        --fntSz: x-large;
+        font-size: var(--fntSz);
     }
     form{
-        padding: 5%;
+        padding: 3%;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
     }
     form > div{
-        padding: 4%;
+        --pdnVal: 4%;
+        padding: var(--pdnVal);
         display: flex;
         flex-direction: column;
     }
+    h2{
+        padding-top: 5%;
+    }
+    button{
+        font-weight:bold;
+    }
 }
+
+
 .logo{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     margin-top: var(--logoMrgn);
 }
 .logo > img{
     width: var(--logoWidth);
     height: auto;
 }
+
+
 .input-section{ 
     display: flex;
-    background-color: black;
+    background-color: rgba(0,0,0,0.7);
     color: white;
     flex-direction: var(--flxDir);
     align-items: var(--alnItm);
@@ -71,9 +101,54 @@ body{
 }
 .text{
     font-weight: bold;
+    font-size: var(--fntSz);
+}
+
+
+form > div{
+    padding-top: var(--pdnVal);
+    padding-bottom: var(--pdnVal);
 }
 form > div > label{
     flex-direction: column;
+}
+
+
+input{
+    border: none;
+    padding: none;
+}
+input:focus{
+    border: 3px solid var(--btnBgColor);
+    padding: none;
+}
+input:invalid{
+    border: 3px solid red;
+}
+
+
+button{
+    background-color: var(--btnBgColor);
+    border: 0px;
+    border-radius: 8px;
+    padding: var(--btnPadding);
+    margin-bottom: 2%;
+    color: white;
+    box-sizing: border-box;
+}
+button:hover{
+    --btnPadding: 6px;
+    background-color: white;
+    border: 2px solid var(--btnBgColor);
+    padding: var(--btnPadding);
+    color: var(--btnBgColor);
+}
+
+
+.randtext{
+    --randtextMrgn: 7%;
+    margin-top: var(--randtextMrgn);
+    margin-bottom: var(--randtextMrgn);
 }
 
 /* i can declare variables inside media and then use that value to initiate each of the sections */
